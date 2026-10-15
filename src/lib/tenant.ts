@@ -26,10 +26,13 @@ export type Settings = {
   shop_enabled?: boolean; booking_enabled?: boolean; booking_capacity?: number;
   booking_slot_minutes?: number; booking_min_notice_hours?: number; booking_max_days?: number;
   booking_auto_confirm?: boolean; booking_instructions?: string | null;
+  // codes promo (réglage du commerçant) et reçus
+  promo_enabled?: boolean; receipt_footer?: string | null;
 };
 
 export type Tenant = {
   id: string; slug: string; name: string; business_type: string; status: string;
+  module_pos?: boolean; // caisse : activée uniquement par l'administrateur
   tenant_settings: Settings;
 };
 
